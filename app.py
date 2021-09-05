@@ -6,8 +6,6 @@
 
 from PySimpleGUI import PySimpleGUI as sg
 
-# Meu Tema
-
 FutexTheme = {'BACKGROUND': '#201c24',
                 'TEXT': '#c9fffb',
                 'INPUT': '#36313b',
@@ -21,16 +19,15 @@ FutexTheme = {'BACKGROUND': '#201c24',
 
 sg.theme_add_new('FutexTheme', FutexTheme)
 
-# Layout
 sg.theme('FutexTheme')
 layout = [
     [sg.Text(' USER:  '),sg.Input(key='usuario',size=(20,1))],
     [sg.Text('SENHA: '),sg.Input(key='senha', password_char='*', size=(20,1))],
     [sg.Button('LOGIN '), sg.Button('FECHAR ')]
 ]
-# Janela
+
 janela = sg.Window('LOGIN', layout)
-# Eventos
+
 while True:
     eventos, valores = janela.read()
     if eventos == sg.WINDOW_CLOSED:
